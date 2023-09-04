@@ -1,0 +1,12 @@
+const {mongoose} = require('../db/dbConnect');
+
+const RoleSchema = new mongoose.Schema({
+    role_name:{
+        type: String,
+        required: true
+    }
+})
+
+const Role = mongoose.model('Role', RoleSchema);
+
+module.exports = {Role};
