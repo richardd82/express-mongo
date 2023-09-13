@@ -1,0 +1,62 @@
+[
+    {
+    "name": "Leanne Graham",
+    "email": "Sincere@gmail.com",
+    "password": "123456",
+    "role": "64f7e7a38425640e17e53f9a"
+    },
+    {
+    "name": "Ervin Howell",
+    "email": "Shanna@gmail.com",
+    "password": "123456",
+    "role": "64f7e7a38425640e17e53f9a"
+    },
+    {
+    "name": "Clementine Bauch",
+    "email": "Nathan@gmail.come",
+    "password": "123456",
+    "role": "64f7e7a38425640e17e53f9a"
+    },
+    {
+    "name": "Patricia Lebsack",
+    "email": "Julianne.OConner@hotmail.com",
+    "password": "123456",
+    "role": "64f816db3d1bd722a6e47679"
+    },
+    {
+    "name": "Chelsey Dietrich",
+    "email": "Lucio_Hettinger@hotmail.com",
+    "password": "123456",
+    "role": "64f816db3d1bd722a6e47679"
+    },
+    {
+    "name": "Mrs. Dennis Schulist",
+    "email": "Karley_Dach@hotmail.com",
+    "password": "123456",
+    "role": "64f816fa3d1bd722a6e4767f"
+    },
+    {
+    "name": "Kurtis Weissnat",
+    "email": "Telly.Hoeger@hotmail.com",
+    "password": "123456",
+    "role": "64f7e7c58425640e17e53f9f"
+    },
+    {
+    "name": "Nicholas Runolfsdottir V",
+    "email": "Sherwood@hotmail.com",
+    "password": "123456",
+    "role": "64f7e7c58425640e17e53f9f"
+    },
+    {
+    "name": "Glenna Reichert",
+    "email": "Chaim_McDermott@yahoo.com",
+    "password": "123456",
+    "role": "64f7e7c58425640e17e53f9f"
+    },
+    {
+    "name": "Clementina DuBuque",
+    "email": "Rey.Padberg@yahoo.com",
+    "password": "123456",
+    "role": "64f816eb3d1bd722a6e4767c"
+    }
+    ]

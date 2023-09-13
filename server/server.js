@@ -1,24 +1,45 @@
 const express = require('express');
-const server = express();
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+const cors = require('cors');
 const bodyParser = require('body-parser');
-// require('../db/dbConnect')
+const connectDB = require('../db/dbConnect')
+const {routes} = require('../routes/index.js');
+require('dotenv').config();
+
+
+const server = express();
+connectDB();
+
 
 server.use(express.json({ limit: '50mb' }));
 server.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-const routes = require('../routes/index');
-routes(server);
 
 server.use(bodyParser.json());
 server.name = 'API';
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     next();
 } );
+server.use(cors(
+    {
+      origin: process.env.CLIENT_URL,
+      methods:'GET, POST, PUT, DELETE, OPTIONS',
+      credentials: true,
+    }
+  ))
+  server.use(cookieSession(//se cambió de cookieSession a Session
+    {
+      name: 'session',
+      keys: ['lama'],
+      maxAge: 48 * 60 * 60 *10
+    }
+    ));
 
 server.use('/', routes)
 

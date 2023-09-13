@@ -1,4 +1,4 @@
-const {mongoose} = require('../db/dbConnect');
+const {mongoose} = require('mongoose');
 
 const RoleSchema = new mongoose.Schema({
     role_name:{

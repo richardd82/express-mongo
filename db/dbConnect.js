@@ -1,10 +1,20 @@
-const mongoose = require('mongoose');
+const { connect, connection } = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/testMongo', {
-    // userNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected...'))
-.catch(err => console.log(`Failed to connect to MongoDB: ${err}`));
+const conn = {
+    isConnected: false,
+}
 
-module.exports = {mongoose};
+const connectDB = async () => {
+  if(conn.isConnected) return;
+  const db = await connect("mongodb://127.0.0.1/testMongo");
+  conn.isConnected = db.connections[0].readyState;
+};
+
+connection.on('connected', () => {
+    console.log('Mongoose is connected');
+});
+connection.on('error', (err) => {
+    console.log('Mongoose connection error', err);
+});
+
+ module.exports = connectDB;
